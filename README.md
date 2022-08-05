@@ -1,11 +1,10 @@
-# team-repo-template
-:exclamation: _This top heading should be the name of your project i.e. BiocSwirl or SNVariome. Anything between 2 exclamation marks is intended to be deleted. Any content that isn't a heading or an optional heading can be deleted as well. The structure of this readme is open to any creative changes, but the main components of Background/Data/Usage/Team Members should remain. You're free to add images and get creative about how you want your readme to look._ :exclamation:
+# mCIRCrna
+The goal is to integrate circadian transcriptomes with muscle snRNA-seq data to identify age and cell type dependent circadian gene signatures that demonstrate tissue chronicity in muscle.
 
-:exclamation: _The `configs` and `notebooks` directories are also optional. We recommend taking a look at [cookiecutter for datascience](https://github.com/drivendata/cookiecutter-data-science) or [cookiecutter for computational biology](https://github.com/drivendata/cookiecutter-data-science) to get ideas on structuring your projects. Also, use a `.gitignore` that fits the main programming language of your project._ :exclamation:
 
 ## Table of Contents
 
-- [Template](#team-repo-template)
+- [mCIRCrna](#team-repo-template)
     - [Background](#Background)
     - [Data](#data)
     - [Usage](#usage)
@@ -20,11 +19,12 @@
 
 ## Background
 
-:exclamation: _Include background on the project, project description, and significance. This will be converted to your team's abstract by the end of the hackathon. This should be updated by Monday, August 1st to include feedback given._ :exclamation:
+Goal is to identify circadian gene signatures that demonstrate tissue chronicity (2 fold expression changes over time) compared to age and cell type in muscle.
 
 ## Data
 
-:exclamation: _Discuss the data you used and how it can be accessed._ :exclamation:
+CircAge: https://circaage.shinyapps.io/circaage/
+MyoAtlas: https://research.cchmc.org/myoatlas/
 
 ## Usage
 
@@ -107,5 +107,5 @@ output_directory/
 
 ## Team Members
 
-Tarun Mamidi | tmamidi@uab.edu | Team Leader  
-Shaurita Hutchins | shutchins@uab.edu | Co-leader
+Shufan Zhang | shufan0519@gmail.com | Team Leader  
+
