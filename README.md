@@ -15,15 +15,19 @@ The goal is to integrate circadian transcriptomes with muscle snRNA-seq data to 
             - [Step-1](#step-1)
             - [Step-2](#step-2)
     - [Results](#results) _Optional depending on project_
+    - [References](#references)
     - [Team Members](#team-members)
 
 ## Background
 
 Goal is to identify circadian gene signatures that demonstrate tissue chronicity (2 fold expression changes over time) compared to age and cell type in muscle.
 
+Goal would be to use the CircAge RNA-seq transcriptomic database, and cross reference muscle transcriptomes with snRNA-seq muscle database. Genes that show chronicity (2 fold changes over time course ZT1-24) are compared to snRNA-seq profiles from Myoatlas. Expression profiles of dysregulated chronic genes (e.g. Per2) would then be compared in muscle cell populations (MTJ, FAPs, type II myonuclei, etc.). Conversely, any very dysregulated muscle genes across aging (P21, 24 months, 30 months TA) could then be cross referenced for chronicity using CircAge.
+
 ## Data
 
 CircAge: https://circaage.shinyapps.io/circaage/
+
 MyoAtlas: https://research.cchmc.org/myoatlas/
 
 ## Usage
@@ -104,6 +108,9 @@ output_directory/
 
 ## Results
 :exclamation: _If your project yielded or intends to yield some novel analysis, please include them in your readme. It can be named something other than results as well._ :exclamation:
+
+## References
+    Ding, Haocheng, et al. Likelihood-based tests for detecting circadian rhythmicity and differential circadian patterns in transcriptomic applications. Briefings in Bioinformatics 22.6 (2021): bbab224.
 
 ## Team Members
 
