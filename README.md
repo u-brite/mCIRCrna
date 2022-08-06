@@ -16,6 +16,7 @@ The goal is to integrate circadian transcriptomes with muscle snRNA-seq data to 
         - Differential Expressions
     - [References](#references)
     - [Team Members](#team-members)
+         -  Lisa Shrestha, Van Nha Huynh, Kristen Coutinho, Russel Santos, Herminio Vazquez, Shufan Zhang
 
 ## Background
 
@@ -46,4 +47,9 @@ MyoAtlas: https://research.cchmc.org/myoatlas/
 ## Team Members
 
 Shufan Zhang | shufan0519@gmail.com | Team Leader  
-
+Lisa Shrestha
+Van Nha Huynh
+Kristen Coutinho
+Russel Santos
+Herminio Vazquez
+Shufan Zhang
