@@ -25,6 +25,8 @@ Goal would be to use the CircAge RNA-seq transcriptomic database, and cross refe
 
 ## Data
 
+McCarthy JJ, Andrews JL, McDearmon EL, Campbell KS, Barber BK, Miller BH, Walker JR, Hogenesch JB, Takahashi JS, Esser KA. Identification of the circadian transcriptome in adult mouse skeletal muscle. Physiol Genomics. 2007 Sep 19;31(1):86-95. doi: 10.1152/physiolgenomics.00066.2007. Epub 2007 Jun 5. PMID: 17550994; PMCID: PMC6080860.
+
 CircAge: https://circaage.shinyapps.io/circaage/
 
 MyoAtlas: https://research.cchmc.org/myoatlas/
