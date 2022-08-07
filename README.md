@@ -70,8 +70,7 @@ We identified 32 circadian-regulated transcripts that have age- and cell-type-de
 
 ![image](https://user-images.githubusercontent.com/107160194/183271995-ffd29786-3719-4034-b519-2aa3e0401c2f.png)
 ![image](https://user-images.githubusercontent.com/107160194/183272331-ee82a2fe-1cbe-43b4-baea-782a096e4c5f.png)
- 
- - Example data: Pank1 is a Type IIB myonuclei marker that is significantly circadian only in old mice
+ > Example data: Pank1 is a Type IIB myonuclei marker that is significantly circadian only in old mice
 
 ## References
 Ding, Haocheng, et al. Likelihood-based tests for detecting circadian rhythmicity and differential circadian patterns in transcriptomic applications. Briefings in Bioinformatics 22.6 (2021): bbab224.
