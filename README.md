@@ -48,10 +48,9 @@ MyoAtlas: https://research.cchmc.org/myoatlas/
 
 ## Team Members
 
-Shufan Zhang | shufan0519@gmail.com | Team Leader  
-Lisa Shrestha
-Van Nha Huynh
-Kristen Coutinho
-Russel Santos
-Herminio Vazquez
-Shufan Zhang
+- Shufan Zhang | shufan0519@gmail.com | Team Leader  
+- Lisa Shrestha | Member
+- Van Nha Huynh | Member
+- Kristen Coutinho | Member
+- Russel Santos | Member
+- Herminio Vazquez | Member
