@@ -38,15 +38,19 @@ To identify circadian gene signatures that demonstrate tissue chronicity (2 fold
 
 ## Data
 
-- McCarthy JJ, Andrews JL, McDearmon EL, Campbell KS, Barber BK, Miller BH, Walker JR, Hogenesch JB, Takahashi JS, Esser KA. Identification of the circadian transcriptome in adult mouse skeletal muscle. Physiol Genomics. 2007 Sep 19;31(1):86-95. doi: 10.1152/physiolgenomics.00066.2007. Epub 2007 Jun 5. PMID: 17550994; PMCID: PMC6080860.
+### CircaAge 
 
-- Petrany MJ, Swoboda CO, Dun, C, Chetal K, Chen Z, Weirauch MT, Salomonis N, Millay DP. Single-nucleus RNA-seq identifies transcriptional heterogeneity in multinucleated skeletal myofibers. Nat Communications. 2020 Dec 11;11(6374). doi: 10.1038/s41467-02020063.
+- McCarthy JJ, Andrews JL, McDearmon EL, Campbell KS, Barber BK, Miller BH, Walker JR, Hogenesch JB, Takahashi JS, Esser KA. Identification of the circadian transcriptome in adult mouse skeletal muscle. Physiol Genomics. 2007 Sep 19;31(1):86-95. doi: 10.1152/physiolgenomics.00066.2007. Epub 2007 Jun 5. PMID: 17550994; PMCID: PMC6080860.
 
 - CircAge: https://circaage.shinyapps.io/circaage/
 
+### MyoAtlas
+
+- Petrany MJ, Swoboda CO, Dun, C, Chetal K, Chen Z, Weirauch MT, Salomonis N, Millay DP. Single-nucleus RNA-seq identifies transcriptional heterogeneity in multinucleated skeletal myofibers. Nat Communications. 2020 Dec 11;11(6374). doi: 10.1038/s41467-02020063. [Datasets](https://www.synapse.org/#!Synapse:syn21676145/files/)
+
 - MyoAtlas: https://research.cchmc.org/myoatlas/
 
-- Datasets: https://www.synapse.org/#!Synapse:syn21676145/files/
+- 
 
 ## Method
 
