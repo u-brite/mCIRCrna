@@ -40,15 +40,17 @@ To identify circadian gene signatures that demonstrate tissue chronicity (2 fold
 
 - McCarthy JJ, Andrews JL, McDearmon EL, Campbell KS, Barber BK, Miller BH, Walker JR, Hogenesch JB, Takahashi JS, Esser KA. Identification of the circadian transcriptome in adult mouse skeletal muscle. Physiol Genomics. 2007 Sep 19;31(1):86-95. doi: 10.1152/physiolgenomics.00066.2007. Epub 2007 Jun 5. PMID: 17550994; PMCID: PMC6080860.
 
+- Petrany MJ, Swoboda CO, Dun, C, Chetal K, Chen Z, Weirauch MT, Salomonis N, Millay DP. Single-nucleus RNA-seq identifies transcriptional heterogeneity in multinucleated skeletal myofibers. Nat Communications. 2020 Dec 11;11(6374). doi: 10.1038/s41467-02020063.
+
 - CircAge: https://circaage.shinyapps.io/circaage/
 
 - MyoAtlas: https://research.cchmc.org/myoatlas/
 
+- Datasets Repository: https://www.synapse.org/#!Synapse:syn21676145/files/
+
 ## Method
 
 ### Circadian regulated genes
-
-Published circadian gene expression data was aqcuired (McCarthy et.al. 2007) and was from mouse C57B6/J gastrocnemius muscle 7-10 weeks of age. We compared it to CircAge bulk transcriptomics of C57B6/J-NIA mice skeletal muscle which measured gene expression from tissue collected every 4 hours for 48 hours in total darkness (DD), with the first time point being circadian time (CT) 18. We used the 6 month (young adult) and 27 month (old-adult) data.
 
 ### Differential Expression
 Filtered feature bc files for each age group (5 month and 24 month) from snRNA Sequencing were downloaded from https://www.synapse.org/#!Synapse:syn21676145/files/ deposited by Millay DP et al. R (version 4.1.1) package Seurat (version 4.1.1) was used to explore the gene expressions across cell types and ages. For each age group, nuclei with less than 200 or greater than 3200 expressed features and the features that were expressed in less than three cells were excluded. Data were normalized logarithmically using the NormalizeData() function. The top 2000 features with the highest expression variability across the nuclei were identifided using FindVariableFeatures() function, which were then used in Principle Component Analysis (PCA) with RunPCA() function. For cell clustering and Uniform Manifold Approximation and Projection (UMAP) visualization, 12 and 15 components were used for 5 month and 24 month, respectively. The cell clustering and UMAP were done using FindNeighbors(), FindClusters(), and RunUMAP() functions. Cell types were assigned manually as did by Millay DP et al. The datasets were subset to select populations of interest, which are muscle cells. 
@@ -56,10 +58,6 @@ The 5 month and 24 month datasets were then integrated using FindIntegrationAnch
 
 
 ### Tools
-
-- Seurat (version 4.1.1)
-- R (version 4.1.1)
-- R studio
 
 ## Results
 :exclamation: _If your project yielded or intends to yield some novel analysis, please include them in your readme. It can be named something other than results as well._ :exclamation:
