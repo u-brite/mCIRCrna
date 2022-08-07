@@ -50,7 +50,6 @@ To identify circadian gene signatures that demonstrate tissue chronicity (2 fold
 
 - MyoAtlas: https://research.cchmc.org/myoatlas/
 
-- 
 
 ## Method
 
