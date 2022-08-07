@@ -18,7 +18,6 @@ The goal is to integrate circadian transcriptomes with muscle snRNA-seq data to 
         - Differential Expressions
     - [References](#references)
     - [Team Members](#team-members)
-         -  Lisa Shrestha, Van Nha Huynh, Kristen Coutinho, Russel Santos, Herminio Vazquez, Shufan Zhang
 
 ## Background
 
@@ -50,6 +49,9 @@ To identify circadian gene signatures that demonstrate tissue chronicity (2 fold
 ### Circadian regulated genes
 
 ### Differential Expression
+Filtered feature bc files for each age group (5 month and 24 month) from snRNA Sequencing were downloaded from https://www.synapse.org/#!Synapse:syn21676145/files/ deposited by Millay DP et al. R (version 4.1.1) package Seurat (version 4.1.1) was used to explore the gene expressions across cell types and ages. For each age group, nuclei with less than 200 or greater than 3200 expressed features and the features that were expressed in less than three cells were excluded. Data were normalized logarithmically using the NormalizeData() function. The top 2000 features with the highest expression variability across the nuclei were identifided using FindVariableFeatures() function, which were then used in Principle Component Analysis (PCA) with RunPCA() function. For cell clustering and Uniform Manifold Approximation and Projection (UMAP) visualization, 12 and 15 components were used for 5 month and 24 month, respectively. The cell clustering and UMAP were done using FindNeighbors(), FindClusters(), and RunUMAP() functions. Cell types were assigned manually as did by Millay DP et al. The datasets were subset to select populations of interest, which are muscle cells. 
+The 5 month and 24 month datasets were then integrated using FindIntegrationAnchors(), creating a new integrated Seurat object. PCA and UMAP visualization were done as described above. The function FindMarkers() was used to determine differential expression between populations of interest across ages and between cell populations. The FeaturePlot() function was used for visualization of the results. 
+
 
 ### Tools
 
@@ -67,3 +69,4 @@ To identify circadian gene signatures that demonstrate tissue chronicity (2 fold
 - Kristen Coutinho | Member
 - Russel Santos | Member
 - Herminio Vazquez | Member
+
