@@ -152,3 +152,5 @@ top10 <- muscle_markers %>% group_by(cluster) %>% top_n(n = 10, wt = avg_log2FC)
 write.xlsx(A_markers, "5month positive markers.xlsx")
 write.xlsx(B_markers, "24month positive markers.xlsx")
 
+#Saving the Seurat integration object
+saveRDS(integration.integrated.muscle, file = "integration.integrated.muscle.rds")
