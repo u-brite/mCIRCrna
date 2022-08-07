@@ -13,7 +13,7 @@ The goal is to integrate circadian transcriptomes with muscle snRNA-seq data to 
         - Circadian Regulated Genes
         - Differential Expressions
         - Tools
-    - [Results](#results) _Optional depending on project_
+    - [Results](#results)
         - Circadian Regulated Genes
         - Differential Expressions
     - [References](#references)
