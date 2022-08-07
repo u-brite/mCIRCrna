@@ -16,7 +16,6 @@ The goal is to integrate circadian transcriptomes with muscle snRNA-seq data to 
         - Differential Expressions
     - [References](#references)
     - [Team Members](#team-members)
-         -  Lisa Shrestha, Van Nha Huynh, Kristen Coutinho, Russel Santos, Herminio Vazquez, Shufan Zhang
 
 ## Background
 
@@ -25,8 +24,6 @@ Goal is to identify circadian gene signatures that demonstrate tissue chronicity
 Goal would be to use the CircAge RNA-seq transcriptomic database, and cross reference muscle transcriptomes with snRNA-seq muscle database. Genes that show chronicity (2 fold changes over time course ZT1-24) are compared to snRNA-seq profiles from Myoatlas. Expression profiles of dysregulated chronic genes (e.g. Per2) would then be compared in muscle cell populations (MTJ, FAPs, type II myonuclei, etc.). Conversely, any very dysregulated muscle genes across aging (P21, 24 months, 30 months TA) could then be cross referenced for chronicity using CircAge.
 
 ## Data
-
-McCarthy JJ, Andrews JL, McDearmon EL, Campbell KS, Barber BK, Miller BH, Walker JR, Hogenesch JB, Takahashi JS, Esser KA. Identification of the circadian transcriptome in adult mouse skeletal muscle. Physiol Genomics. 2007 Sep 19;31(1):86-95. doi: 10.1152/physiolgenomics.00066.2007. Epub 2007 Jun 5. PMID: 17550994; PMCID: PMC6080860.
 
 CircAge: https://circaage.shinyapps.io/circaage/
 
@@ -37,6 +34,9 @@ MyoAtlas: https://research.cchmc.org/myoatlas/
 ### Circadian regulated genes
 
 ### Differential Expression
+Filtered feature bc files for each age group (5 month and 24 month) from snRNA Sequencing were downloaded from https://www.synapse.org/#!Synapse:syn21676145/files/ deposited by Millay DP et al. R (version 4.1.1) package Seurat (version 4.1.1) was used to explore the gene expressions across cell types and ages. For each age group, nuclei with less than 200 or greater than 3200 expressed features and the features that were expressed in less than three cells were excluded. Data were normalized logarithmically using the NormalizeData() function. The top 2000 features with the highest expression variability across the nuclei were identifided using FindVariableFeatures() function, which were then used in Principle Component Analysis (PCA) with RunPCA() function. For cell clustering and Uniform Manifold Approximation and Projection (UMAP) visualization, 12 and 15 components were used for 5 month and 24 month, respectively. The cell clustering and UMAP were done using FindNeighbors(), FindClusters(), and RunUMAP() functions. Cell types were assigned manually as did by Millay DP et al. The datasets were subset to select populations of interest, which are muscle cells. 
+The 5 month and 24 month datasets were then integrated using FindIntegrationAnchors(), creating a new integrated Seurat object. PCA and UMAP visualization were done as described above. The function FindMarkers() was used to determine differential expression between populations of interest across ages and between cell populations. The FeaturePlot() function was used for visualization of the results. 
+
 
 ### Tools
 
@@ -49,9 +49,4 @@ MyoAtlas: https://research.cchmc.org/myoatlas/
 ## Team Members
 
 Shufan Zhang | shufan0519@gmail.com | Team Leader  
-Lisa Shrestha
-Van Nha Huynh
-Kristen Coutinho
-Russel Santos
-Herminio Vazquez
-Shufan Zhang
+
