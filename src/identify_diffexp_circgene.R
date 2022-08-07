@@ -1,6 +1,6 @@
 # set directory
 getwd()
-setwd("/Users/lovely_shufan/Dropbox (Edison_Lab@UGA)/Hackin'Omics")
+#setwd("/Users/lovely_shufan/Dropbox (Edison_Lab@UGA)/Hackin'Omics")
 library(Seurat)
 library(SeuratObject)
 
