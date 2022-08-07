@@ -1,0 +1,111 @@
+---
+title: "Integration and Differential Expression of mice TA muscle data at 5m/o and 24 m/o"
+output: html_document
+date: "2022-08-06"
+---
+
+## Integration and Differential Expression of mice TA muscle data at 5m/o and 24 m/o
+
+In this document, we have included the script used to integrate the 5m/o TA muscle data and 24m/o muscle datasets. We have also identified differentially expressed gene signatures in different cell_types.
+
+### Loading the necessary packages
+
+```{r, warning=FALSE, message=FALSE}
+library(Seurat)
+library(dplyr)
+library(ggplot2)
+library(cowplot)
+library(xlsx)
+```
+
+### Loading the muscle Seurat object from pre-processing
+```{r, warning=FALSE, message=FALSE}
+fivemonth_muscle <- readRDS("fivemonth_muscle.RDS")
+twentyfourmonth_muscle <- readRDS("twentyfourmonth_muscle.RDS")
+```
+
+### integrating the muscle cells pre-processed data from 5m/o and 24 m/o mice
+```{r,warning=FALSE, message=FALSE }
+fivemonth_muscle@meta.data[["orig.ident"]] <- "A"
+twentyfourmonth_muscle@meta.data[["orig.ident"]] <- "B"
+
+integration.list.muscle <- list(fivemonth_muscle, twentyfourmonth_muscle)
+for (i in 1:length(integration.list.muscle)) {
+  integration.list.muscle[[i]] <- NormalizeData(integration.list.muscle[[i]], verbose = FALSE)
+  integration.list.muscle[[i]] <- FindVariableFeatures(integration.list.muscle[[i]], selection.method = "vst", 
+                                                       nfeatures = 2000, verbose = FALSE)
+}
+
+integration.anchors.muscle <- FindIntegrationAnchors(object.list = integration.list.muscle, dims = 1:30, verbose = FALSE)
+integration.integrated.muscle <- IntegrateData(anchorset = integration.anchors.muscle, dims = 1:30)
+integration.integrated.muscle <- ScaleData(integration.integrated.muscle, verbose = FALSE)
+integration.integrated.muscle <- RunPCA(integration.integrated.muscle, npcs = 30, verbose = FALSE)
+integration.integrated.muscle <- RunUMAP(integration.integrated.muscle, reduction = "pca", dims = 1:30)
+DimPlot(integration.integrated.muscle, reduction = "umap", label = TRUE)
+DimPlot(integration.integrated.muscle, reduction = "umap", group.by = "orig.ident", label = TRUE, repel = TRUE) + NoLegend()
+
+integration.integrated.muscle <- ScaleData(integration.integrated.muscle, verbose = FALSE)
+muscle_markers <- FindAllMarkers(integration.integrated.muscle)
+A <- subset(integration.integrated.muscle, orig.ident == "A")
+B <- subset(integration.integrated.muscle, orig.ident == "B")
+
+A_cells <- rownames(A)
+B_cells <- rownames(B)
+
+A_markers <- FindMarkers(integration.integrated.muscle, ident.1 = "A", ident.2 = NULL, group.by = "orig.ident", only.pos = TRUE)
+B_markers <- FindMarkers(integration.integrated.muscle, ident.1 = "B", ident.2 = "A", group.by = "orig.ident", only.pos = TRUE)
+
+top10 <- muscle_markers %>% group_by(cluster) %>% top_n(n = 10, wt = avg_log2FC)
+
+write.xlsx(A_markers, "5month positive markers.xlsx")
+write.xlsx(B_markers, "24month positive markers.xlsx")
+```
+
+## Differential Expression of genes in different cell-type of mice at different age (5m/o and 24m/o mice)
+```{r,warning=FALSE, message=FALSE }
+Idents(integration.integrated.muscle)
+diffexp5month <- subset(integration.integrated.muscle, orig.ident == "A")
+diffexp24month <- subset(integration.integrated.muscle, orig.ident == "B")
+
+diffexp_5m_type2 <- FindMarkers(diffexp5month, ident.1 = "Type IIb Myonuclei", ident.2 = "Type IIx Myonuclei", verbose = FALSE)
+diffexp_24m_type2 <- FindMarkers(diffexp24month, ident.1 = "Type IIb Myonuclei", ident.2 = "Type IIx Myonuclei", verbose = FALSE)
+diffexp_24m_type2.2 <- FindMarkers(diffexp24month, ident.1 = "Type IIb Myonuclei #2", ident.2 = "Type IIx Myonuclei #2", verbose = FALSE)
+diffexp_24m_type2b <- FindMarkers(diffexp24month, ident.1 = "Type IIb Myonuclei", ident.2 = "Type IIb Myonuclei #2", verbose = FALSE)
+diffexp_24m_type2x <- FindMarkers(diffexp24month, ident.1 = "Type IIx Myonuclei", ident.2 = "Type IIx Myonuclei #2", verbose = FALSE)
+
+
+# differential expression between Satellite vs myocyte
+diffexp_5m_sattype2x <- FindMarkers(diffexp5month, ident.1 = "Satellite Cells", ident.2 = "Type IIx Myonuclei", verbose = FALSE)
+diffexp_5m_sattype2b <- FindMarkers(diffexp5month, ident.1 = "Satellite Cells", ident.2 = "Type IIb Myonuclei", verbose = FALSE)
+diffexp_24m_sattype2b <- FindMarkers(diffexp24month, ident.1 = "Satellite Cells", ident.2 = "Type IIb Myonuclei", verbose = FALSE)
+diffexp_24m_sattype2x <- FindMarkers(diffexp24month, ident.1 = "Satellite Cells", ident.2 = "Type IIx Myonuclei", verbose = FALSE)
+diffexp_24m_sattype2b.2 <- FindMarkers(diffexp24month, ident.1 = "Satellite Cells", ident.2 = "Type IIb Myonuclei #2", verbose = FALSE)
+diffexp_24m_sattype2x.2 <- FindMarkers(diffexp24month, ident.1 = "Satellite Cells", ident.2 = "Type IIx Myonuclei #2", verbose = FALSE)
+
+gene.names <- c()
+gene.names <- c(gene.names, rownames(diffexp_5m_type2), rownames(diffexp_24m_type2), rownames(diffexp_24m_type2.2))
+gene.names <- c(gene.names, rownames(diffexp_24m_type2b), rownames(diffexp_24m_type2x), rownames(diffexp_5m_sattype2x))
+gene.names <- c(gene.names, rownames(diffexp_5m_sattype2b), rownames(diffexp_24m_sattype2b), rownames(diffexp_24m_sattype2x))
+
+gene.names <- c(gene.names, rownames(diffexp_24m_sattype2b.2), rownames(diffexp_24m_sattype2x.2))
+unique.gene.names <- unique(gene.names)
+diffexp.circgene.celltype <- intersect(unique.gene.names, unique(df_clean2$Gene)) 
+```
+
+## differential expression by timepoints
+```{r, warning=FALSE, message=FALSE}
+# differential expression by timepoints
+integration.integrated.muscle$celltype.age <- paste(Idents(integration.integrated.muscle), integration.integrated.muscle$orig.ident, sep = "_")
+integration.integrated.muscle$celltype <- Idents(integration.integrated.muscle)
+Idents(integration.integrated.muscle) <- "celltype.age"
+typeIIb.age <- FindMarkers(integration.integrated.muscle, ident.1 = "Type IIb Myonuclei_A", ident.2 = "Type IIb Myonuclei_B", verbose = FALSE)
+typeIIx.age <- FindMarkers(integration.integrated.muscle, ident.1 = "Type IIx Myonuclei_A", ident.2 = "Type IIx Myonuclei_B", verbose = FALSE)
+satellitte.age <- FindMarkers(integration.integrated.muscle, ident.1 = "Satellite Cells_A", ident.2 = "Satellite Cells_B", verbose = FALSE)
+myotendinous.age <- FindMarkers(integration.integrated.muscle, ident.1 = "Myotendinous Junction_A", ident.2 = "Myotendinous Junction_B", verbose = FALSE)
+neuromuscular.age <- FindMarkers(integration.integrated.muscle, ident.1 = "Neuromuscular Junction_A", ident.2 = "Neuromuscular Junction_B", verbose = FALSE)
+
+
+gene.names.age <- c(rownames(typeIIb.age), rownames(typeIIx.age), rownames(myotendinous.age), rownames(neuromuscular.age))
+diffexp.circgene.age <- intersect(unique(gene.names.age), unique(df_clean2$Gene)) 
+diffexp.circgene.celltype.age <- intersect(diffexp.circgene.age, diffexp.circgene.celltype)
+```

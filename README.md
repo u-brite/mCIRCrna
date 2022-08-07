@@ -5,13 +5,15 @@ The goal is to integrate circadian transcriptomes with muscle snRNA-seq data to 
 ## Table of Contents
 
 - [mCIRCrna](#team-repo-template)
-    - [Background](#Background)
+    - [Background](#background)
+    - [Hypothesis](#hypothesis)
+    - [Aims](#aims)
     - [Data](#data)
     - [Method](#method)
         - Circadian Regulated Genes
         - Differential Expressions
         - Tools
-    - [Results](#results) _Optional depending on project_
+    - [Results](#results)
         - Circadian Regulated Genes
         - Differential Expressions
     - [References](#references)
@@ -19,15 +21,28 @@ The goal is to integrate circadian transcriptomes with muscle snRNA-seq data to 
 
 ## Background
 
-Goal is to identify circadian gene signatures that demonstrate tissue chronicity (2 fold expression changes over time) compared to age and cell type in muscle.
+Skeletal muscle is an endocrine organ that composes 40-60% of the adult body mass with  metabolic and overall health span implications for the entire body. In aging it is well accepted that circadian rhythm declines and is dependent on transcription reprogramming. Because skeletal muscle is an endocrine organ consisting as a substantial portion of body mass, it poses as a promising organ for drug therapeutics, but its high cellular heterogeneity poses a challenge to safe druggable target. 
 
-Goal would be to use the CircAge RNA-seq transcriptomic database, and cross reference muscle transcriptomes with snRNA-seq muscle database. Genes that show chronicity (2 fold changes over time course ZT1-24) are compared to snRNA-seq profiles from Myoatlas. Expression profiles of dysregulated chronic genes (e.g. Per2) would then be compared in muscle cell populations (MTJ, FAPs, type II myonuclei, etc.). Conversely, any very dysregulated muscle genes across aging (P21, 24 months, 30 months TA) could then be cross referenced for chronicity using CircAge.
+## Hypothesis
+
+We hypothesize that we will be able to identify markers important to circadian rhythm and certain cell types if we cross- reference gene expression across age associated with circadian rhythm patterns from bulk transcriptomics to single cell muscle transcriptomics data.
+
+
+## Aims
+
+To identify circadian gene signatures that demonstrate tissue chronicity (2 fold expression changes over time) compared to age and cell type in muscle.
+
+- Find genes that show chronicity (2 fold changes over time course ZT1-24) from CircAge RNA-seq transcriptomic database across age for young and old adult
+
+- Cross reference signifcant genes that epress chronicity from CircAge RNA-seq transcriptomic to Myoatlas snRNA-seq muscle database for cell specific age related for young and old adult differential expression
 
 ## Data
 
-CircAge: https://circaage.shinyapps.io/circaage/
+- McCarthy JJ, Andrews JL, McDearmon EL, Campbell KS, Barber BK, Miller BH, Walker JR, Hogenesch JB, Takahashi JS, Esser KA. Identification of the circadian transcriptome in adult mouse skeletal muscle. Physiol Genomics. 2007 Sep 19;31(1):86-95. doi: 10.1152/physiolgenomics.00066.2007. Epub 2007 Jun 5. PMID: 17550994; PMCID: PMC6080860.
 
-MyoAtlas: https://research.cchmc.org/myoatlas/
+- CircAge: https://circaage.shinyapps.io/circaage/
+
+- MyoAtlas: https://research.cchmc.org/myoatlas/
 
 ## Method
 
@@ -48,5 +63,10 @@ The 5 month and 24 month datasets were then integrated using FindIntegrationAnch
 
 ## Team Members
 
-Shufan Zhang | shufan0519@gmail.com | Team Leader  
+- Shufan Zhang | shufan0519@gmail.com | Team Leader  
+- Lisa Shrestha | Member
+- Van Nha Huynh | Member
+- Kristen Coutinho | Member
+- Russel Santos | Member
+- Herminio Vazquez | Member
 
