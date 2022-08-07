@@ -6,6 +6,7 @@ library(SeuratObject)
 
 # input data
 integration.integrated.muscle <- readRDS("intergration.integrated.muscle.rds")
+df_clean2 <- read.csv("circadian_regulated_genes_by_circage.csv", header = TRUE) 
 
 # differential expression between 2x and 2b muscle cells
 # "0" = "Type IIb Myonuclei", "1" = "Type IIx Myonuclei", "2" = "Type IIb Myonuclei #2", 
