@@ -1,0 +1,33 @@
+library(Seurat)
+library(dplyr)
+library(ggplot2)
+
+## Reading the integration object from Seurat
+integration.integrated.muscle <- readRDS("intergration.integrated.muscle.rds")
+
+## Visualizing the DE expressed genes by cell types
+FeaturePlot(integration.integrated.muscle, features = c("Myh10","Slc38a4","Prkca"), split.by = "orig.ident", max.cutoff = 3, cols = c("grey", "red"))
+FeaturePlot(integration.integrated.muscle, features = c("Col4a2","Fbxl7","Col4a1","Kitl"), split.by = "orig.ident", max.cutoff = 3, cols = c("grey", "red"))
+FeaturePlot(integration.integrated.muscle, features = c("Irs1","Atp1b1","Trim63"), split.by = "orig.ident", max.cutoff = 3, cols = c("grey", "red"))
+FeaturePlot(integration.integrated.muscle, features = c("Pfkfb3","Slc38a2","Fbxo32"), split.by = "orig.ident", max.cutoff = 3, cols = c("grey", "red"))
+FeaturePlot(integration.integrated.muscle, features = c("Ddit4l","Asb2"), split.by = "orig.ident", max.cutoff = 3, cols = c("grey", "red"))
+FeaturePlot(integration.integrated.muscle, features = c("Pank1", "Myh1", "Nrip1"), split.by = "orig.ident", max.cutoff = 3, cols = c("grey", "red"))
+FeaturePlot(integration.integrated.muscle, features = c("Timp3","Egln3","Npc1"), split.by = "orig.ident", max.cutoff = 3, cols = c("grey", "red"))
+FeaturePlot(integration.integrated.muscle, features = c("Asb4","Ky"), split.by = "orig.ident", max.cutoff = 3, cols = c("grey", "red"))
+FeaturePlot(integration.integrated.muscle, features = c("Ddit4l","Asb2"), split.by = "orig.ident", max.cutoff = 3, cols = c("grey", "red"))
+FeaturePlot(integration.integrated.muscle, features = c("Ahnak","Stxbp4","Crim1")   , split.by = "orig.ident", max.cutoff = 3, cols = c("grey", "red"))
+FeaturePlot(integration.integrated.muscle, features = c("Tsc22d3", "Pdk4",  "Igfbp5"), split.by = "orig.ident", max.cutoff = 3, cols = c("grey", "red"))
+FeaturePlot(integration.integrated.muscle, features = c("Tbc1d4"), split.by = "orig.ident", max.cutoff = 3, cols = c("grey", "red"))
+
+#Visualizing DE Genes expressed by timepoints
+FeaturePlot(integration.integrated.muscle, features = c("Egln3","Pank1","Tbc1d4"), split.by = "orig.ident", max.cutoff = 3, cols = c("grey", "red"))
+FeaturePlot(integration.integrated.muscle, features = c("Atp1b1","Pfkfb3","Myh1"), split.by = "orig.ident", max.cutoff = 3,cols = c("grey", "red"))
+FeaturePlot(integration.integrated.muscle, features = c("Timp3","Ahnak","Slc38a2"), split.by = "orig.ident", max.cutoff = 3, cols = c("grey", "red"))
+FeaturePlot(integration.integrated.muscle, features = c("Myh10","Asb2","Trim63"), split.by = "orig.ident", max.cutoff = 3, cols = c("grey", "red"))
+FeaturePlot(integration.integrated.muscle, features = c("Fbxo32","Irs1","Asb4"), split.by = "orig.ident", max.cutoff = 3,cols = c("grey", "red"))
+FeaturePlot(integration.integrated.muscle, features = c("Nrip1","Slc38a4","Tsc22d3" ), split.by = "orig.ident", max.cutoff = 3, cols = c("grey", "red"))
+FeaturePlot(integration.integrated.muscle, features = c("Ddit4l","Npc1","Crim1"), split.by = "orig.ident", max.cutoff = 3, cols = c("grey", "red"))
+FeaturePlot(integration.integrated.muscle, features = c("Ctdspl","Col4a1","Col4a2"), split.by = "orig.ident", max.cutoff = 3,cols = c("grey", "red"))
+FeaturePlot(integration.integrated.muscle, features = c("Ky","Fbn1","Adamts9"), split.by = "orig.ident", max.cutoff = 3, cols = c("grey", "red"))
+FeaturePlot(integration.integrated.muscle, features = c("Fbxl7","Kitl","Sept8"), split.by = "orig.ident", max.cutoff = 3, cols = c("grey", "red"))
+FeaturePlot(integration.integrated.muscle, features = c("Igfbp5","Stxbp4"), split.by = "orig.ident", max.cutoff = 3, cols = c("grey", "red"))
