@@ -67,8 +67,10 @@ R Studio
 ## Results
 We identified 32 circadian-regulated transcripts that have age- and cell-type-dependent differential expression patterns in mice skeletal muscle. Expression level of 28 genes differ in Type IIx Myonuclei, Type IIb Myonuclei, and Satellite Cells at 5 months and 24 months. Differential expression of 2 transcript is strictly between age, while 4 were exclusive between cell types.
 
-Example data 
+Example data: Pank1 is a Type IIB myonuclei marker that is significantly circadian only in old mice
 ![image](https://user-images.githubusercontent.com/107160194/183271995-ffd29786-3719-4034-b519-2aa3e0401c2f.png)
+![image](https://user-images.githubusercontent.com/107160194/183272331-ee82a2fe-1cbe-43b4-baea-782a096e4c5f.png)
+![image](https://user-images.githubusercontent.com/107160194/183272349-5fc39aa2-7685-4ed9-8342-b4c4414c1554.png)
 
 ## References
 Ding, Haocheng, et al. Likelihood-based tests for detecting circadian rhythmicity and differential circadian patterns in transcriptomic applications. Briefings in Bioinformatics 22.6 (2021): bbab224.
