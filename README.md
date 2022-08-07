@@ -21,7 +21,7 @@ The goal is to integrate circadian transcriptomes with muscle snRNA-seq data to 
 
 ## Background
 
-Skeletal muscle is an endocrine organ that composes 40-60% of the adult body mass with  metabolic and overall health span implications for the entire body. In aging it is well accepted that circadian rhythm declines and is dependent on transcription reprogramming. Because skeletal muscle is an endocrine organ consisting as a substantial portion of body mass, it poses as a promising organ for drug therapeutics, but its high cellular heterogeneity poses a challenge to safe druggable target. 
+Skeletal muscle is an endocrine organ that composes 40-60% of the adult body mass with  metabolic and overall health span implications for the [entire body](https://www.nature.com/articles/nrendo.2012.49). In aging it is well accepted that circadian rhythm declines and is dependent on [transcription reprogramming](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4965692/). Because skeletal muscle is an endocrine organ consisting as a substantial portion of body mass, it poses as a promising organ for drug therapeutics, but its high cellular heterogeneity poses a challenge to safe druggable target. 
 
 ## Hypothesis
 
