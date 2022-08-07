@@ -38,23 +38,20 @@ To identify circadian gene signatures that demonstrate tissue chronicity (2 fold
 
 ## Data
 
-### CircaAge 
-
 - McCarthy JJ, Andrews JL, McDearmon EL, Campbell KS, Barber BK, Miller BH, Walker JR, Hogenesch JB, Takahashi JS, Esser KA. Identification of the circadian transcriptome in adult mouse skeletal muscle. Physiol Genomics. 2007 Sep 19;31(1):86-95. doi: 10.1152/physiolgenomics.00066.2007. Epub 2007 Jun 5. PMID: 17550994; PMCID: PMC6080860.
+
+- Petrany MJ, Swoboda CO, Dun, C, Chetal K, Chen Z, Weirauch MT, Salomonis N, Millay DP. Single-nucleus RNA-seq identifies transcriptional heterogeneity in multinucleated skeletal myofibers. Nat Communications. 2020 Dec 11;11(6374). doi: 10.1038/s41467-02020063.
 
 - CircAge: https://circaage.shinyapps.io/circaage/
 
-### MyoAtlas
-
-- Petrany MJ, Swoboda CO, Dun, C, Chetal K, Chen Z, Weirauch MT, Salomonis N, Millay DP. Single-nucleus RNA-seq identifies transcriptional heterogeneity in multinucleated skeletal myofibers. Nat Communications. 2020 Dec 11;11(6374). doi: 10.1038/s41467-02020063. [Datasets](https://www.synapse.org/#!Synapse:syn21676145/files/)
-
 - MyoAtlas: https://research.cchmc.org/myoatlas/
 
+- Datasets: https://www.synapse.org/#!Synapse:syn21676145/files/
 
 ## Method
 
 ### Circadian regulated genes
-Circadian gene expression data (McCarthy et.al. 2007) were acquired for mouse C57B6/J gastrocnemius muscle 7-10 weeks of age. It was compared to CircAge bulk transcriptomics of C57B6/J-NIA mice skeletal muscle which measured gene expression from tissue collected every 4 hours for 48 hours in total darkness (DD), with the first time point being circadian time (CT) 18. 6 month (young adult) and 27 month (old-adult) data were used.
+Circadian gene expression data (McCarthy et.al. 2007) were acquired for male mouse C57B6/J gastrocnemius muscle 7-10 weeks of age. It was compared to CircAge bulk transcriptomics of C57B6/J-NIA mice skeletal muscle which measured gene expression from tissue collected every 4 hours for 48 hours in total darkness (DD), with the first time point being circadian time (CT) 18. 6 month (young adult) and 27 month (old-adult) data were used.
 
 ### Differential Expression
 Filtered feature bc files for each age group (5 month and 24 month) from snRNA Sequencing were downloaded from https://www.synapse.org/#!Synapse:syn21676145/files/ deposited by Millay DP et al. R (version 4.1.1) package Seurat (version 4.1.1) was used to explore the gene expressions across cell types and ages. For each age group, nuclei with less than 200 or greater than 3200 expressed features and the features that were expressed in less than three cells were excluded. Data were normalized logarithmically using the NormalizeData() function. The top 2000 features with the highest expression variability across the nuclei were identifided using FindVariableFeatures() function, which were then used in Principle Component Analysis (PCA) with RunPCA() function. For cell clustering and Uniform Manifold Approximation and Projection (UMAP) visualization, 12 and 15 components were used for 5 month and 24 month, respectively. The cell clustering and UMAP were done using FindNeighbors(), FindClusters(), and RunUMAP() functions. Cell types were assigned manually as did by Millay DP et al. The datasets were subset to select populations of interest, which are muscle cells. 
@@ -64,10 +61,10 @@ The 5 month and 24 month datasets were then integrated using FindIntegrationAnch
 ### Tools
 
 ## Results
-:exclamation: _If your project yielded or intends to yield some novel analysis, please include them in your readme. It can be named something other than results as well._ :exclamation:
+We identified 32 circadian-regulated transcripts that have age- and cell-type-dependent differential expression patterns in mice skeletal muscle. Expression level of 28 genes differ in Type IIx Myonuclei, Type IIb Myonuclei, and Satellite Cells at 5 months and 24 months. Differential expression of 2 transcript is strictly between age, while 4 were exclusive between cell types.
 
 ## References
-    Ding, Haocheng, et al. Likelihood-based tests for detecting circadian rhythmicity and differential circadian patterns in transcriptomic applications. Briefings in Bioinformatics 22.6 (2021): bbab224.
+Ding, Haocheng, et al. Likelihood-based tests for detecting circadian rhythmicity and differential circadian patterns in transcriptomic applications. Briefings in Bioinformatics 22.6 (2021): bbab224.
 
 ## Team Members
 
