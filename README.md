@@ -59,6 +59,10 @@ The 5 month and 24 month datasets were then integrated using FindIntegrationAnch
 
 
 ### Tools
+Seurat (version 4.1.1)
+CircAge
+R (version 4.1.1)
+R Studio
 
 ## Results
 We identified 32 circadian-regulated transcripts that have age- and cell-type-dependent differential expression patterns in mice skeletal muscle. Expression level of 28 genes differ in Type IIx Myonuclei, Type IIb Myonuclei, and Satellite Cells at 5 months and 24 months. Differential expression of 2 transcript is strictly between age, while 4 were exclusive between cell types.
