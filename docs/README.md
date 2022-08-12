@@ -15,4 +15,4 @@ For future directions, the list of genes from this project will be cross referen
 
 ## Data
 1. [MyoAtlas](https://research.cchmc.org/myoatlas/)
-2. [Circadian Transcriptome in adult mice] (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6080860/)
+2. [Circadian Transcriptome in adult mice](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6080860/)
