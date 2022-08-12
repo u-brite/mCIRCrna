@@ -1,7 +1,6 @@
 # docs
 
-## Abstracts
-<h2>mCIRCrna Abstract</h2>
+## mCIRCrna Abstract
 
 Kristen Coutinho, Lisa Shrestha, Van Nha Huynh, Shufan Zhang, Russel Santos, Herminio Vazquez
 
